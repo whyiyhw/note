@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ok</title>
+	<style>
+		#msgbox{
+			width: 600px;
+			height: 450px;
+			margin: 0 auto;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+		#sendbox{
+			width: 600px;
+			margin: 0px auto;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+<div id="box">
+	<div id="msgbox"></div>
+	<div id="sendbox">
+		<input type="text" id="msg"/>
+		<input type="button" value="发送消息" id="btn" />
+	</div>
+</div>
+<script>
+	var ws = new WebSocket('ws://127.0.0.1:6060');
+
+	//打开链接
+	ws.onopen = function (evt) {
+//		ws.send('hello');
+	};
+
+	//会话
+	ws.onmessage = function (evt) {
+        document.getElementById('msgbox').innerHTML += '<p>'+evt.data+'</p>';
+    };
+
+    //关闭
+	ws.onclose = function (evt) {
+
+	};
+
+	//异常
+	ws.onerror = function (evt) {
+
+	};
+	document.getElementById('btn').onclick = function () {
+	  var obj = document.getElementById('msg');
+	  var val = obj.value;
+	  ws.send(val);
+	};
+</script>
+</body>
+</html>
