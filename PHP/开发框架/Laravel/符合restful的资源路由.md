@@ -1,0 +1,10 @@
+- 对于资源路由 一般满足
+- Route::resource('Users','UsersController');
+---
+- Route::get('users','UsersController@index');//列表
+- Route::get('users/{user}','UsersController@show')//用户信息
+- Route::get('users/create','UsersCotroller@create')//创建用户页面
+- Route::post('users','UsersController@store')//创建用户
+- Route::get('users/{user}/edit','UsersController@edit')//用户编辑页面
+- Route::patch('users/{user}','UsersController@update')//用户更新
+- Route::delete('users/{user}','UsersController@destroy')//用户删除
