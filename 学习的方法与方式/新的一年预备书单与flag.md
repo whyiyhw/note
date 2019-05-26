@@ -138,3 +138,12 @@ tags:
   - 没有想向上的心态,别人不会都是你爸妈,想让你天天向上
   - 自我调节与反思真的很重要
 ### 以上就是我 2019 主要会去实践的几个方向,也是我记录生活的开始,变化越难,改变越大,谨以此文作为我 2019 生活的开端,希望每个人都能成长为更好的自己!
+
+### 路线
+- 后端相关知识点
+  - web开发路线图 https://github.com/goodjack/developer-roadmap-chinese
+- 面试相关，可以作为日常学习的补充资料
+https://cyc2018.github.io/CS-Notes/#/
+https://github.com/colinlet/PHP-Interview-QA
+- 简历
+https://github.com/geekcompany/ResumeSample
