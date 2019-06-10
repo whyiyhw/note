@@ -530,6 +530,86 @@ Finished 100000 requests
 
 ```
 
-```
+```shell
 
 ```
+
+### beego
+
+```go
+func (u *UserController) Test() {
+    str := "hello"+ strconv.FormatInt(time.Now().UnixNano(), 10)
+    u.Data["json"] = str
+    u.ServeJSON()
+}
+```
+
+```shell
+$ ./ab.exe -c 100 -n 50000 -k http://192.168.73.128:8080/v1/user/test
+This is ApacheBench, Version 2.3 <$Revision: 1748469 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 192.168.73.128 (be patient)
+Completed 5000 requests
+Completed 10000 requests
+Completed 15000 requests
+Completed 20000 requests
+Completed 25000 requests
+Completed 30000 requests
+Completed 35000 requests
+Completed 40000 requests
+Completed 45000 requests
+Completed 50000 requests
+
+
+Server Software:        beegoServer:1.11.2
+Server Hostname:        192.168.73.128
+Server Port:            8080
+
+Document Path:          /v1/user/test
+Document Length:        26 bytes
+
+Concurrency Level:      100
+Time taken for tests:   3.860 seconds
+Complete requests:      50000
+Failed requests:        0
+Keep-Alive requests:    50000
+Total transferred:      10050000 bytes
+HTML transferred:       1300000 bytes
+Requests per second:    12953.22 [#/sec] (mean)
+Time per request:       7.720 [ms] (mean)
+Time per request:       0.077 [ms] (mean, across all concurrent requests)
+Transfer rate:          2542.57 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    8   2.7      7      76
+Waiting:        0    8   2.6      7      65
+Total:          0    8   2.7      7      77
+
+Percentage of the requests served within a certain time (ms)
+  50%      7
+  66%      8
+  75%      9
+  80%      9
+  90%     10
+  95%     11
+  98%     12
+  99%     14
+ 100%     77 (longest request)
+Finished 50000 requests
+```
+
+## 数据库操作
+
+http://authserver.hznu.edu.cn/authserver/login?service=http://ehall.hznu.edu.cn/login?service=http://ehall.hznu.edu.cn/new/index.html
+
+这个后台服务是 java 做的
+http://ehall.hznu.edu.cn
+172.31.211.85
+
+
+http://hys.hznu.edu.cn/webhsd/start
+172.31.223.25
