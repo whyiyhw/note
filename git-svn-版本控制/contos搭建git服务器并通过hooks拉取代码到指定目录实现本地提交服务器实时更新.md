@@ -1,19 +1,25 @@
+# centos 搭建可自动上传的服务
+
 ## 搭建git服务器
 
-```
+```shell
 # yum install -y git
 # cd /home
 # mkdir -m 777 test
 # cd test
 # git init --bare test.git
 ```
+
 权限问题 我是自己个人用就没有必要
+
 ## 在本地拉取git仓库
 
 选定一个本地目录
+
+```shell
+# git clone ssh://root@123.123.123.123/home/test/test.git
 ```
-$ git clone ssh://root@123.123.123.123/home/test/test.git
-```
+
 ssh://用户名@主机地址/仓库路径
 
 会让你输入所选角色的密码
@@ -25,6 +31,7 @@ ssh://用户名@主机地址/仓库路径
 ### 重点在于hooks的使用
 
 ## 使用hook部署一个TP的博客项目
+
 ```
 # cd /home/test/
 # ls
@@ -33,6 +40,7 @@ test.git
 # cp post-receive.sample post-receive
 # vi post-receive
 ```
+
 ```
 在最下面加上
 #站点根目录
@@ -40,11 +48,13 @@ git --work-tree=/data/www/tp checkout -f
 #因为tp的缓存文件在上传上去时需要执行权限 所以写一个简单的shell命令
 /bin/chmod -R 777 /data/www/tp/Application/Runtime
 ```
-```
+
+```shell
 #保存退出后
 # chmod +x post-receive
 ```
-在本地提交 tp项目到服务器 
+
+在本地提交 tp项目到服务器
 
 设置一下虚拟主机对应目录
 
@@ -71,4 +81,4 @@ iptables端口开放
 #除了这些还可以指定哪个文件一定会被add
 !./Application/Runtime/Cache/123.php
 
-#上述的缓存中只有123.php会被 add 
+#上述的缓存中只有123.php会被 add
