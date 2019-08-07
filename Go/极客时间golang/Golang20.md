@@ -1,16 +1,16 @@
-## Golang
+## `Golang`
 -  新技术 第一怎么用?
 -  怎么实现?
 -  为什么这么实现?
 -  有程序员特色的学习方法，针对学习的内容写一点程序。把正在学习的问题的解法，写一个算法实现出来。
 
 - `golang` 可以用来干什么？
-    - 服务器编程，以前你是用C 或者c++ 做的事情golang 都可以实现
+    - 服务器编程，以前你是用C 或者c++ 做的事情`golang` 都可以实现
     如， 处理日志，数据打包，虚拟机处理，文件系统
     - 分布式系统，数据库代理器等
-    - 网络编程 包括web 应用 API 下载应用
+    - 网络编程 包括web 应用 `API` 下载应用
     - 内存数据库 
-    - 云平台 docker K8S
+    - 云平台 `docker` `K8S`
 
 - 环境安装
     - windows [下载](https://studygolang.com/dl/golang/go1.11.windows-amd64.msi)
@@ -18,7 +18,7 @@
         - `go version` 查看 环境
         - `go env` 查看 `golang` 的环境变量
     - [文档](http://docscn.studygolang.com/pkg/) 
-    - contOS7 安装
+    - `contOS7` 安装
     ```
     wget -c https://studygolang.com/dl/golang/go1.11.linux-amd64.tar.gz
     tar zvxf go1.11.linux-amd64.tar.gz 
@@ -92,10 +92,10 @@ Println 返回 打印的字符数,error 会自动在结尾加上换行
         -  Go的标准库包含了大量的包,但是你也可以创建自己的包
         -  包的依赖关系决定了其构建顺序。
         -  如果对一个包进行更改或重新编译，所有引用了这个包的客户端程序都必须全部重新编译
-        -  如果 A.go 依赖 B.go，而 B.go 又依赖 C.go：
+        -  如果 `A.go` 依赖 `B.go`，而 `B.go` 又依赖 `C.go`：
 
-            - 编译 C.go, B.go, 然后是 A.go.
-            - 为了编译 A.go, 编译器读取的是 B.o 而不是 C.o
+            - 编译 `C.go`, `B.go`, 然后是 `A.go`.
+            - 为了编译 `A.go`, 编译器读取的是 `B.o` 而不是 `C.o`
         - 每段代码只会被编译一次
         - 一个Go程序是通过 import 关键词将一组包链接在一起
     - 可见性规则
@@ -105,18 +105,18 @@ Println 返回 打印的字符数,error 会自动在结尾加上换行
     - 函数
         - 最简单函数`func functionName()`
         - main 函数 既没有参数 也没有返回值
-        - 在程序初始化 后 会调用 main.main() 函数
+        - 在程序初始化 后 会调用 `main.main()` 函数
         - 程序正常退出的代码为0 即 Program exited with code 0
         - 如果程序因为异常而退出 就会返回非零值 这个数值可以推断 程序是否成功执行
     - 注释
-        - 注释可以被 godoc 收集
+        - 注释可以被 `godoc` 收集
         - // 行注释 
         - /* */ 块注释 
     - 类型
         - 基本类型
-            - bool string int float
+            - `bool` string int float
         - 复合类型
-            - struct array slice map channel
+            - `struct` array slice map channel
             - 复合类型的零值为 nil 
             - 可以使用 type 来自定义别名 type xy int   var a xy = 3
         - 只描述 类型的行为
@@ -156,17 +156,17 @@ Println 返回 打印的字符数,error 会自动在结尾加上换行
             - var a int  = 3
             
         - 自动推导类型
-            - c := 3 ; fmt.Printf("c type is T%\n", c) // %T 为type类型
+            - c := 3 ; `fmt.Printf("c type is T%\n", c)` // %T 为type类型
             - 同一个变量名 只能 声明一次
-        - Println 与Printf的区别
-            - Println 是 打印 默认在后面 加上当前系统的换行
-            - Printf 是格式化打印 fmt.Printf(,) 可以打印更多的信息 
+        - `Println` 与`Printf`的区别
+            - `Println` 是 打印 默认在后面 加上当前系统的换行
+            - `Printf` 是格式化打印 `fmt.Printf(,)` 可以打印更多的信息 
         -  多重赋值 与匿名变量
             - a,b := 10,20
             - 交换 两个变量的值 a,b = b,a
             - _,a := 10,20 _ 就是匿名变量 //一般配合函数使用 丢弃 多返回值
     - 常量 -- 运行期间内不可变的量
-        - const b = 30 //关键字 name  =  值 自动推导 不需要使用 :=
+        - `const b = 30` //关键字 name  =  值 自动推导 不需要使用 :=
         - 多常量定义 
         ```
         const{
@@ -176,7 +176,7 @@ Println 返回 打印的字符数,error 会自动在结尾加上换行
         ```
         - 常量与iota
             - iota 从0开始自动加1
-            - 遇到const 重新变为0
+            - 遇到`const` 重新变为0
         ```
     	const (
 	        a = iota
@@ -190,7 +190,8 @@ Println 返回 打印的字符数,error 会自动在结尾加上换行
 	    fmt.Println(a, b, d)
         ```
             - 常量在声明后可以不使用
-    - bool
+    - `bool`
+        
         - 布尔类型
         - 长度为1 
         - 零值为 false
@@ -199,70 +200,80 @@ Println 返回 打印的字符数,error 会自动在结尾加上换行
         - 字节类型
         - 长度为1
         - 零值为 0
-        - uint8 的别名
+        - `uint8` 的别名
     - rune
         - 字符类型
         - 长度为4
         - 零值为 0
-        - 专门用于 存储unicode编码 等价于 uint32
-    - int uint
+        - 专门用于 存储`unicode`编码 等价于`uint32`
+    - `int` `uint`
+        
         - 整型
         - 长度为4或者8
-        - uint 就是无符号 永远为正
+        - `uint` 就是无符号 永远为正
         - 零值为0
         - 根据操作系统 为32或者64位
-    - int8 uint8
+    - `int8` `uint8`
+        
         - 整型
         - 长度为1
         - 零值为0
         - -128-127 | 0-255
-    - int16 uint16
+    - `int16` `uint16`
+        
         - 整型
         - 长度为2
         - 零值为0
         - -32768-32767 | 0-65535
-    - int32 uint32
+    - `int32` `uint32`
+        
         - 整形
         - 长度为4
         - 零值为0
         - -21亿-21亿 | 0-42亿
-    - int64 uint64
+    - `int64` `uint64`
+        
         - 整形
         - 长度为8
         - 零值为0
         - ~
-    - float32
+    - `float32`
+        
         - 浮点型（实型）
         - 长度为4 
         - 零值为0.0
         - 小数位精确到7位
-    - float64
+    - `float64`
+        
         - 浮点型（实型）
         - 长度为8
         - 零值为0.0
         - 小数位精确到15位
-    - complex64
+    - `complex64`
+        
         - 复数类型
         - 长度为8
-        - 零值为 (0+0i) //实数+虚数
-    - complex128
+        - 零值为 (`0+0i`) //实数+虚数
+    - `complex128`
+        
         - 复数类型
         - 长度为16
-        - 零值为 (0+0i) //实数+虚数
-    - uintptr 
+        - 零值为 (`0+0i`) //实数+虚数
+    - `uintptr `
+        
         - 整形
         - 4或者8
-        - 用来存储指针的uint32或者uint64整数
+        - 用来存储指针的`uint32`或者`uint64`整数
     - string
         - 字符串
         - 零值 ""
-        - utf-8字符串
+        - `utf-8`字符串
     - tips 
         - a := "" a的类型一律为 字符串 string
-        - a := 'a' a的类型为 (rune) int32
-        - var a byte = 'a' a的类型为 (byte) int8
+        - a := 'a' a的类型为 (rune) `int32`
+        - var a byte = 'a' a的类型为 `(byte) int8`
     - 基础类型
-        - bool
+        - `bool`
         - float 浮点
         - rune/byte 字符
         - 大小写相差32 小写数字比较大
@@ -279,22 +290,24 @@ a type is uint8 num is a 97/n
 1. 单双引号
 2. 字符串由一个或者多个字符组成
 3. 字符串都是隐藏了一个结束符号"\0"
-4. str := "a" //是由 字符'a' + '\0' 组成的
-5. 访问字符串中的元素 可以使用 str := "str" ==str[0]== 为 s ==str[1]== 为 t
+4. `str := "a"` //是由 字符'a' + '\0' 组成的
+5. 访问字符串中的元素 可以使用 `str := "str"` `str[0] 为 s` `str[1] 为 t`
 
 - 复数类型
-```
- t := 2.1+3.14i`
+```go
+ t := 2.1+3.14i
  fmt.Println("real(t)",real(t),"imag(t)", imag(t))`
- 系统函数 ==real()== 取实部  ==imag()== 取虚部
+ 系统函数 real() 取实部  imag() 取虚部
 ```
 ##### 格式化的几个标识
-    - %c 格式化字符
-    - %s 格式化字符串
-    - %f 浮点型
-    
-    - %v 万能ge'shi
-##### 从 cli 中取输入
+```go
+- %c 格式化字符
+- %s 格式化字符串
+- %f 浮点型
+
+- %v 万能ge'shi
+```
+##### 从 `cli ` 中取输入
 ```
 	var a int
 	fmt.Printf("请输入数字a :")
@@ -306,7 +319,7 @@ a type is uint8 num is a 97/n
 ```
 ##### 类型转换 可以看作函数
 1. 不是所有类型都能类型转换,只有兼容的数据格式才能转换
-2. bool 类型 不能转换成整型 整型不能 转换成bool
+2. `bool` 类型 不能转换成整型 整型不能 转换成`bool`
 3. 兼容类型 字符型本质上就是 整型 var a byte a= 'a' int(a) 这个时候 就可以转成int 97
 5. 范围大的格式 转 范围小的格式 会精度丢失
 ##### 类型别名
@@ -397,7 +410,7 @@ func FuncName (参数列表) (a type,b type/*返回值列表*/) {
 - 如果 只有一个 返回值 且不声明返回值变量 那么你可以省略，包括 返回值的括号
 - 如果没有返回值， 那么直接省略 最后的返回信息
 - 如果 有返回值 那么必须有 return
-    
+  
 ##### 普通函数
     - 固定 参数
         - 固定参数一定要传参 
@@ -493,10 +506,10 @@ func test() func() int {
     - 如果是传参 那就是 先传 不调用
     - 如果 是 不传参 就使用 是引用外面 参数
 ##### 获取 命令行 参数 
-- list := os.Args 
+- `list := os.Args `
 - 这个 list 会获取 执行时 传递 过来的参数
-- 执行 hello.exe a b 
-- hello.exe,a,b 都是list 列表中的参数
+- 执行 `hello.exe a b `
+- `hello.exe,a,b` 都是list 列表中的参数
 ##### 变量作用域
 - 局部变量
     - 定义在 { }内的 变量 叫 局部变量
@@ -509,29 +522,31 @@ func test() func() int {
     -  使用原则 为 就近原则
 #### 工程管理
 ##### 工作区
-- bin src pkg(必须)
+- `bin` `src` `pkg`(必须)
 - 导入包
-    - import () 多个
-    - . "fmt" 导入 直接用
-    - _ "fmt" 导入后 不使用
-    - f "fmt" 起别名
+    - `import ()` 多个
+    - `. "fmt"` 导入 直接用
+    - `_ "fmt"` 导入后 不使用
+    - `f "fmt"` 起别名
 - 同一个 目录 包名要一致
 - 同一个 目录 调用 别的 文件的 函数 可以直接调用
-- 先执行 导入包的 init() 函数  每个 包的 init 只执行一次 也是 循环
+- 先执行 导入包的 `init()` 函数  每个 包的 `init` 只执行一次 也是 循环
 ##### 关于三个 目录
-src 时 必须的  GOPATH 定义在 src 的 上一级
-GOBIN 定义在 src 平级的 bin 
-go install 一个 不可执行的文件时候
-会在 平级的 pkg 下面 生成 一个 系统变量/.a 静态库
+`src` 时 必须的  `GOPATH` 定义在 `src` 的 上一级
+`GOBIN` 定义在 `src` 平级的 `bin `
+`go install` 一个 不可执行的文件时候
+会在 平级的` pkg` 下面 生成 一个 系统变量`/.a` 静态库
 
-go get
-go get会做两件事：
+`go get`
+`go get`会做两件事：
+
 1. 从远程下载需要用到的包
-2. 执行go install
+2. 执行`go install`
 
-go install
-go install 会生成可执行文件直接放到bin目录下，当然这是有前提的
-你编译的是可执行文件，如果是一个普通的包，会被编译生成到pkg目录下该文件是.a结尾
+`go install`
+`go install` 会生成可执行文件直接放到`bin`目录下，当然这是有前提的
+你编译的是可执行文件，如果是一个普通的包，会被编译生成到`pkg`目录下该文件是`.a`结尾
+
 #### 复合类型
 1. pointer 指针
     - 变量
@@ -560,8 +575,8 @@ swap(&a, &b)
     - 声明 var a [50]int 声明 [数字] 必须是 常量 不能使用 变量
     - 数组的 初始化
         - 声明定义同时 赋值
-        - aa := [5]int{1, 2, 3}
-        - 下标 赋值 a := [5]int{1:10, 4:2}
+        - `aa := [5]int{1, 2, 3}`
+        - 下标 赋值 `a := [5]int{1:10, 4:2}`
     - 二维 数组 
         - 有多少[] 就是 几维 
 ```
@@ -634,5 +649,5 @@ func modify(p *[10]int){
         - slice 再 append 之后 如果不足以 填充空间 底层会双倍扩容
         - slice 是一种 数据结构 取自与底层数组的引用
 
-4. map 字典
-5. struct 结构体
+4. `map` 字典
+5. `struct` 结构体
