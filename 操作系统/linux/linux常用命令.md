@@ -149,8 +149,10 @@ tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩
     - source ./test.sh
     - 开头使用 #!/bin/sh
     -  
-```
+```shell
 每天零点重启服务器
 crontab -e
 00*** /bin/reboot
 ```
+
+- `passwd` `userName` 修改密码
